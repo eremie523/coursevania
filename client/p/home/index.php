@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <?php require_once "../../components/dependencies.php" ?>
+    <style>
+        .hero {
+            background-image: url("../../../assets/landing_bg1.png");
+            background-size: 130% 130% !important;
+            background-repeat: no-repeat;
+            object-fit: cover;
+            background-color: black;
+        }
+
+        .header {
+            font-size: 70px !important
+        }
+
+        .header2 {
+            font-size: 50px !important
+        }
+    </style>
+</head>
+
+<body class="m-0 p-0 position-relative">
+    <main class="p-0 m-0">
+        <?php require_once "../../components/topNav.php" ?>
+
+        <div id="content" class="container-fluid p-0 m-0">
+            <div id="toast-container"></div>
+            <div class="d-flex justify-content-center align-items-center min-vh-100 text-center hero">
+                <div class="font-bold text-white">
+                    <h3 class="fs-1 fw-medium header">Get The Best Free Online Courses</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla <br />
+                        dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus.</p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div class="text-center my-5">
+                        <h3 class="header2 text-secondary py-4">Featured Courses</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac <br /> ligula sapien. Suspendisse cursus faucibus finibus.</p>
+                    </div>
+
+                    <div class="row w-100 p-4" id="courses">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-2 overflow-hidden">
+                            <div class="w-100 p-2">
+                                <div class="w-100 object-fit-cover position-relative" style="height: 23vw !important">
+                                    <img src="../../../assets/login_banner.png" alt="" class="w-100 h-100 object-fit-cover">
+                                    <div class="position-absolute top-0 start-0 m-3">
+                                        <button class="accent-bg px-4 py-2 rounded-pill text-white border-0">
+                                            <span class="fw-semibold">Price: </span><span>$</span><span>44.75</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-4 pb-2" style="background-color: #ccceee">
+                                    <h3>Arts & Crafts</h3>
+                                    <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                    <div class="accent-text fw-bold">
+                                        <span class="fs-6">
+                                            120
+                                        </span>
+                                        <span class="fs-5">Students</span>
+                                    </div>
+                                </div>
+                                <div class="px-3 py-1 pb-3" style="background-color: #ccceee">
+                                    <div class="d-flex flex-column ">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="../../../assets/landing_bg1.png" alt="" style="width: 80px; height: 80px; object-fit: cover" class="rounded-circle">
+                                            <p class="m-0 fw-medium fs-6">William Parker</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-2 overflow-hidden">
+                            <div class="w-100 p-2">
+                                <div class="w-100 object-fit-cover position-relative" style="height: 23vw !important">
+                                    <img src="../../../assets/landing_bg1.png" alt="" class="w-100 h-100 object-fit-cover">
+                                    <div class="position-absolute top-0 start-0 m-3">
+                                        <button class="accent-bg px-4 py-2 rounded-pill text-white border-0">
+                                            <span class="fw-semibold">Price: </span><span>$</span><span>44.75</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-4 pb-2" style="background-color: #ccceee">
+                                    <h3>Arts & Crafts</h3>
+                                    <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                    <div class="accent-text fw-bold">
+                                        <span class="fs-6">
+                                            120
+                                        </span>
+                                        <span class="fs-5">Students</span>
+                                    </div>
+                                </div>
+                                <div class="px-3 py-1 pb-3" style="background-color: #ccceee">
+                                    <div class="d-flex flex-column ">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="../../../assets/landing_bg1.png" alt="" style="width: 80px; height: 80px; object-fit: cover" class="rounded-circle">
+                                            <p class="m-0 fw-medium fs-6">William Parker</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-2 overflow-hidden">
+                            <div class="w-100 p-2">
+                                <div class="w-100 object-fit-cover position-relative" style="height: 23vw !important">
+                                    <img src="../../../assets/app-def-2.png" alt="" class="w-100 h-100 object-fit-cover">
+                                    <div class="position-absolute top-0 start-0 m-3">
+                                        <button class="accent-bg px-4 py-2 rounded-pill text-white border-0">
+                                            <span class="fw-semibold">Price: </span><span>$</span><span>44.75</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-4 pb-2" style="background-color: #ccceee">
+                                    <h3>Arts & Crafts</h3>
+                                    <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                    <div class="accent-text fw-bold">
+                                        <span class="fs-6">
+                                            120
+                                        </span>
+                                        <span class="fs-5">Students</span>
+                                    </div>
+                                </div>
+                                <div class="px-3 py-1 pb-3" style="background-color: #ccceee">
+                                    <div class="d-flex flex-column ">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="../../../assets/1.jfif" alt="" style="width: 80px; height: 80px; object-fit: cover" class="rounded-circle">
+                                            <p class="m-0 fw-medium fs-6">William Parker</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-2 overflow-hidden">
+                            <div class="w-100 p-2">
+                                <div class="w-100 object-fit-cover position-relative" style="height: 23vw !important">
+                                    <img src="../../../assets/app-def-1.jpg" alt="" class="w-100 h-100 object-fit-cover">
+                                    <div class="position-absolute top-0 start-0 m-3">
+                                        <button class="accent-bg px-4 py-2 rounded-pill text-white border-0">
+                                            <span class="fw-semibold">Price: </span><span>$</span><span>44.75</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-4 pb-2" style="background-color: #ccceee">
+                                    <h3>Arts & Crafts</h3>
+                                    <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                    <div class="accent-text fw-bold">
+                                        <span class="fs-6">
+                                            120
+                                        </span>
+                                        <span class="fs-5">Students</span>
+                                    </div>
+                                </div>
+                                <div class="px-3 py-1 pb-3" style="background-color: #ccceee">
+                                    <div class="d-flex flex-column ">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="../../../assets/landing_bg1.png" alt="" style="width: 80px; height: 80px; object-fit: cover" class="rounded-circle">
+                                            <p class="m-0 fw-medium fs-6">William Parker</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-2 overflow-hidden">
+                            <div class="w-100 p-2">
+                                <div class="w-100 object-fit-cover position-relative" style="height: 23vw !important">
+                                    <img src="../../../assets/login_banner.png" alt="" class="w-100 h-100 object-fit-cover">
+                                    <div class="position-absolute top-0 start-0 m-3">
+                                        <button class="accent-bg px-4 py-2 rounded-pill text-white border-0">
+                                            <span class="fw-semibold">Price: </span><span>$</span><span>44.75</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-4 pb-2" style="background-color: #ccceee">
+                                    <h3>Arts & Crafts</h3>
+                                    <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                    <div class="accent-text fw-bold">
+                                        <span class="fs-6">
+                                            120
+                                        </span>
+                                        <span class="fs-5">Students</span>
+                                    </div>
+                                </div>
+                                <div class="px-3 py-1 pb-3" style="background-color: #ccceee">
+                                    <div class="d-flex flex-column ">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="../../../assets/landing_bg1.png" alt="" style="width: 80px; height: 80px; object-fit: cover" class="rounded-circle">
+                                            <p class="m-0 fw-medium fs-6">William Parker</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-2 overflow-hidden">
+                            <div class="w-100 p-2">
+                                <div class="w-100 object-fit-cover position-relative" style="height: 23vw !important">
+                                    <img src="../../../assets/login_banner.png" alt="" class="w-100 h-100 object-fit-cover">
+                                    <div class="position-absolute top-0 start-0 m-3">
+                                        <button class="accent-bg px-4 py-2 rounded-pill text-white border-0">
+                                            <span class="fw-semibold">Price: </span><span>$</span><span>44.75</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-4 pb-2" style="background-color: #ccceee">
+                                    <h3>Arts & Crafts</h3>
+                                    <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                    <div class="accent-text fw-bold">
+                                        <span class="fs-6">
+                                            120
+                                        </span>
+                                        <span class="fs-5">Students</span>
+                                    </div>
+                                </div>
+                                <div class="px-3 py-1 pb-3" style="background-color: #ccceee">
+                                    <div class="d-flex flex-column ">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="../../../assets/landing_bg1.png" alt="" style="width: 80px; height: 80px; object-fit: cover" class="rounded-circle">
+                                            <p class="m-0 fw-medium fs-6">William Parker</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-2 overflow-hidden">
+                            <div class="w-100 p-2">
+                                <div class="w-100 object-fit-cover position-relative" style="height: 23vw !important">
+                                    <img src="../../../assets/login_banner.png" alt="" class="w-100 h-100 object-fit-cover">
+                                    <div class="position-absolute top-0 start-0 m-3">
+                                        <button class="accent-bg px-4 py-2 rounded-pill text-white border-0">
+                                            <span class="fw-semibold">Price: </span><span>$</span><span>44.75</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-4 pb-2" style="background-color: #ccceee">
+                                    <h3>Arts & Crafts</h3>
+                                    <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                    <div class="accent-text fw-bold">
+                                        <span class="fs-6">
+                                            120
+                                        </span>
+                                        <span class="fs-5">Students</span>
+                                    </div>
+                                </div>
+                                <div class="px-3 py-1 pb-3" style="background-color: #ccceee">
+                                    <div class="d-flex flex-column ">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="../../../assets/landing_bg1.png" alt="" style="width: 80px; height: 80px; object-fit: cover" class="rounded-circle">
+                                            <p class="m-0 fw-medium fs-6">William Parker</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12 p-2 overflow-hidden">
+                            <div class="w-100 p-2">
+                                <div class="w-100 object-fit-cover position-relative" style="height: 23vw !important">
+                                    <img src="../../../assets/login_banner.png" alt="" class="w-100 h-100 object-fit-cover">
+                                    <div class="position-absolute top-0 start-0 m-3">
+                                        <button class="accent-bg px-4 py-2 rounded-pill text-white border-0">
+                                            <span class="fw-semibold">Price: </span><span>$</span><span>44.75</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-4 pb-2" style="background-color: #ccceee">
+                                    <h3>Arts & Crafts</h3>
+                                    <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                    <div class="accent-text fw-bold">
+                                        <span class="fs-6">
+                                            120
+                                        </span>
+                                        <span class="fs-5">Students</span>
+                                    </div>
+                                </div>
+                                <div class="px-3 py-1 pb-3" style="background-color: #ccceee">
+                                    <div class="d-flex flex-column ">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <img src="../../../assets/landing_bg1.png" alt="" style="width: 80px; height: 80px; object-fit: cover" class="rounded-circle">
+                                            <p class="m-0 fw-medium fs-6">William Parker</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonials  -->
+                    <div class="container-fluid p-0 px-5 my-5">
+                        <div class="shadow p-0 row">
+                            <div class="col-md-5 col-12 p-5 accent-bg text-white">
+                                <h3 class="m-0 p-0 fs-2">Testimonies</h3>
+                                <p class="m-0 p-0 fs-5">Over 1000+ testimonies from various users</p>
+                                <div class="mt-5 bg-dark px-4 py-2 text-center rounded-3 shadow">Reviewed By 10+ Companies</div>
+                            </div>
+                            <div class="col-md-7 col-12 p-5 position-relative ">
+                                <div class="position-absolute top-0 end-0 p-3"><i>But</i></div>
+                                <div class="d-flex gap-2 bg-black rounded-3 text-white p-3 shadow ">
+                                    <div class="object-fit-cover" style="width: 200px !important; height: 80px !important" >
+                                        <img src="../../../assets/app-def-2.png" class="rounded-circle object-fit-cover w-100 h-100 border border-white " alt="">
+                                    </div>
+                                    <div>
+                                        <div class="text-secondary fw-bold m-0 p-0">Eremie Johnson</div>
+                                        <div class="m-0 p-0 text-white-50 ">reremie523@gmail.com</div>
+                                        <div>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit porro facilis repudiandae alias magni qui placeat iste a nemo veniam reiciendis molestiae ex, rem eveniet aperiam quod sapiente exercitationem voluptatum.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center gap-3 pt-4">
+                                    <div style="width: 40px !important; height: 40px !important" class="bg-dark text-white rounded-circle d-grid align-content-center justify-content-center shadow ">
+                                        <i class="fa fa-angle-left"></i>
+                                    </div>
+                                    <div style="width: 40px !important; height: 40px !important" class="bg-dark text-white rounded-circle d-grid align-content-center justify-content-center shadow ">
+                                        <i class="fa fa-angle-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container text-center p-5">
+                        <h3 class="header2">Join Our Community Now!</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac <br /> ligula sapien. Suspendisse cursus faucibus finibus.
+                        </p>
+                        <div class="p-5">
+                            <a href="../login/"><button class="accent-bg text-white border-0 px-5 py-3 fs-5 fw-medium">Register Now</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="p-1 accent-bg mt-4 bg-dark w-100 text-white p-5">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="d-flex align-items-center">
+                    <img src="../../../assets/Screenshot 2024-01-19 210638.png" alt="">
+                    <h3 class="fs-5 m-0 p-0">TECHNOLOGIES</h3>
+                </div>
+                <p class="m-0 p-0 fs-6 text-white-50">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam, ex adipisci inventore voluptates consequuntur voluptatem!</p>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 text-white-50 text-center ">
+                <h3 class="fs-5">LINKS</h3>
+                <ul class="list-unstyled d-flex flex-row gap-4 justify-content-center footer_links">
+                    <li><a href="../home/" class="text-white-50 text-decoration-none flinks">Home</a></li>
+                    <li><a href="../create/" class="text-white-50 text-decoration-none flinks">Create</a></li>
+                    <li><a href="../login/" class="text-white-50 text-decoration-none flinks">Login</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 text-white-50">
+                <div class="d-flex px-5 justify-content-md-start justify-content-center align-items-center gap-3">
+                    <i class="align-content-center bg-white d-grid fa fa-facebook fa-regular justify-content-center rounded-circle text-dark" style="
+    width: 40px;
+    height: 40px;
+"></i>
+                    <i class="align-content-center bg-white d-grid fa fa-facebook fa-regular justify-content-center rounded-circle text-dark" style="
+    width: 40px;
+    height: 40px;
+"></i>
+                    <i class="align-content-center bg-white d-grid fa fa-facebook fa-regular justify-content-center rounded-circle text-dark" style="
+    width: 40px;
+    height: 40px;
+"></i>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between p-5 py-2 pt-5">
+            <p>CopyRight <i class="fa fa-copyright"></i> 2024</p>
+            <div>Hog University 2024</div>
+        </div>
+    </div>
+
+    <!-- <div>
+        <label for="text-input">Enter text or URL:</label>
+        <input type="text" id="text-input" placeholder="Type your text here">
+        <button onclick="generateQRCode()">Generate QR Code</button>
+    </div>
+
+    <div id="qrcode" style="padding: 30px"></div> -->
+
+    <!-- Include the qrcode-generator library -->
+    <!-- <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script> -->
+
+    <script>
+        // function generateQRCode() {
+        //     // Get the input value
+        //     var inputValue = document.getElementById("text-input").value;
+
+        //     // Create a QRCode instance
+        //     var qrcode = new QRCode(document.getElementById("qrcode"), {
+        //         text: "http://localhost/coursevania/client/p/home/"+inputValue,
+        //         width: 128,
+        //         height: 128
+        //     });
+
+        //     // Clear the input field after generating QR code
+        //     document.getElementById("text-input").value = '';
+        // }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+body #wrapper {
+    background: rgba(129, 120, 120, 0.4) !important;
+    padding: 70px;
+}
+button[type="submit"]:hover {
+    color: white !important;
+    background-color: #bc9b23 !important;
+}
+
+form input, #category label{
+    background-color: rgb(249, 249, 238) !important;
+}
+
+#category label {}
+form input:focus {
+    background-color: white !important;
+}

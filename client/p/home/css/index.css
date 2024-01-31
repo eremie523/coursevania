@@ -1,0 +1,35 @@
+.course-info-session{
+    background-color: rgba(0, 0, 0, 0.63) !important;
+}
+
+.course-info-session button{
+    color: white !important;
+    font-weight: bold !important;
+    box-shadow: 2px 2px 5px grey !important;
+}
+
+#cover{
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+#recent-courses{
+    display: flex !important;
+    flex: 0 0 1 !important;
+}
+
+#recent-courses h4, #recent-courses p {
+    margin: 0px !important;
+}
+
+#recent-courses h4{
+    font-size: 1.2rem !important;
+}
+
+#recent-courses p{
+    font-size: .9rem !important;
+}
+
+.flinks:hover{
+    color: #edbe16 !important;;
+}

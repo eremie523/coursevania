@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?php include_once("../../components/dependencies.php") ?>
+    <meta name="c-p" content="<?php echo explode('?p=', $_SERVER["REQUEST_URI"])[1] ?>">
+</head>
+<body class="bg-white position-relative ">
+    <div class="py-3 px-4 border-bottom border-secondary-subtle w-100 position-sticky top-0 z-2" style="backdrop-filter: blur(20px)">
+        <img src="../../../assets/Screenshot 2024-01-19 210638.png" alt="">
+    </div>
+    <div class="position-fixed min-vh-100 top-0 w-100" style="background-image: url('../../../assets/landing_bg1.png'); background-size: 100%; object-fit: cover; opacity: 25%">
+
+    </div>
+    <div id="toast-container"></div>
+    <div class="position-relative w-100 d-flex align-items-center justify-content-center flex-column">
+    <div class="row p-md-5 p-3 w-100 justify-content-center align-items-center">
+        <div class="col-md-6 px-maxi d-flex flex-column gap-3 font-monospace ">
+            <h2 class="fw-bold fs-header border-bottom p-2 px-md-2 px-0">
+                Welcome to Hog University
+            </h2>
+            <p class="font-semibold text-secondary d-md-block d-none">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, nulla facilis hic, aliquam fugit vero labore esse aspernatur architecto et voluptates debitis laborum, nihil animi ab amet sequi dolores mollitia error! Provident ipsam repellendus laboriosam! Explicabo porro nostrum ad consequuntur saepe libero corrupti necessitatibus sapiente quidem, cumque hic quod atque doloremque perspiciatis ipsam quo distinctio unde, excepturi eius voluptas ipsa!
+            </p>
+        </div>
+        <div class="col-md-6 border border-1 border-black px-2 shadow" style="backdrop-filter: blur(2px)">
+            <div class="row bg-white text-white-50 fw-bold text-center fs-5">
+                <div class="col-6 border border-black px-4 py-2 d-flex align-items-center gap-2 justify-content-center bg-dark" id="loginBtn">
+                    <i class="fa fa-user fa-regular"></i>
+                    <span>Login</span>
+                </div>
+                <div class="col-6 border border-black px-4 py-2 d-flex align-items-center gap-2 justify-content-center text-black" id="signUpBtn">
+                    <i class="fa-solid fa-regular fa-clipboard-list"></i>
+                    <span>Sign Up</span>
+                </div>
+            </div>
+
+            <div class="py-4 w-100 d-none" id="signup" isEnabled="false">
+                <form action="POST" class="d-flex flex-column gap-3 w-100 px-4" id="signup_form">
+                    <div class="row p-0 gap-sm-0 gap-2">
+                        <div class="pe-sm-1 p-0 col-sm-6">
+                            <input type="text" id="sfirstName" name="firstName" class="w-100 px-3 py-2 form-control border-2 text-secondary" placeholder="First Name">
+                        </div>
+                        <div class="ps-sm-1 p-0 col-sm-6">
+                            <input type="text" id="slastName" name="lastName" class="w-100 px-3 py-2 form-control border-2 text-secondary" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="row p-0 gap-sm-0 gap-2">
+                        <div class="pe-sm-1 p-0 col-sm-6">
+                            <input type="email" id="semail" name="email" class="w-100 px-3 py-2 form-control border-2 text-secondary" placeholder="Email Address">
+                        </div>
+                        <div class="ps-sm-1 p-0 col-sm-6">
+                            <input type="telephone" id="spnum" name="pnum" class="w-100 px-3 py-2 form-control border-2 text-secondary" placeholder="Phone Number">
+                        </div>
+                    </div>
+                    <div class="row p-0 gap-sm-0 gap-2">
+                        <div class="pe-sm-1 p-0 col-sm-6">
+                            <input type="password" id="spassword" name="password" class="w-100 px-3 py-2 form-control border-2 text-secondary" placeholder="Enter Password" autocomplete="new-password">
+                        </div>
+                        <div class="ps-sm-1 p-0 col-sm-6">
+                            <input type="password" id="sconfPassword" name="confPassword"  class="w-100 px-3 py-2 form-control border-2 text-secondary" placeholder="Confirm Password" autocomplete="new-password">
+                        </div>
+                    </div>
+                    <div class="w-100 p-0">
+                        <label for="category" class="form-label">Register as:</label>
+                        <div class="row p-0" id="category">
+                            <div class="pe-1 col-6">
+                                <label class="form-control border-2 d-flex align-items-center gap-2 " for="student">
+                                    <input type="radio" name="category" value="student" id="student">
+                                    <span>Student</span>
+                                </label>
+                            </div>
+                            <div class="ps-1 col-6">
+                                <label class="form-control border-2 d-flex align-items-center gap-2 " for="instructor">
+                                    <input type="radio" name="category" value="instructor" id="instructor">
+                                    <span>Instructor</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Already Have an Account? <a href="./?p=login">Login</a></p>
+                    <div class="w-100 py-4">
+                        <button class="d-block w-100 px-4 py-2 text-dark fw-semibold font-monospace rounded border-0 accent-bg text-white-50" type="submit">SIGN UP</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="py-4 w-100 d-none" id="login" isEnabled="true">
+                <form action="POST" class="d-flex flex-column gap-3 w-100 px-4" id="login_form">
+                    <div class="w-100">
+                        <!-- <label for="email" class="form-label fw-medium ">Email Address or Username</label>
+                        <br> -->
+                        <input type="email" class="form-control border-2 px-4 py-2 text-secondary w-100" name="email"  id="email" placeholder="Email Address" >
+                    </div>
+                    <div class="w-100">
+                        <!-- <label for="pswd" class="form-label fw-medium ">Password</label>
+                        <br> -->
+                        <input type="password" class="form-control border-2 px-4 py-2 text-secondary w-100" name="password" id="password" placeholder="Password" >
+                    </div>
+                    <a class="fw-medium">
+                        Forgot Password?
+                    </a>
+                    <p>Don't Have an Account? <a href="./?p=signup">Sign up</a></p>
+                    <div class="w-100 py-4">
+                        <button class="d-block w-100 px-4 py-2 text-dark fw-semibold font-monospace rounded border-0 accent-bg text-white-50" type="submit">Log In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+
+</html>
