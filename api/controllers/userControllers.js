@@ -51,6 +51,8 @@ async function uploadCourse(req, res) {
         const { course_banner, course_sub_videos } = req.files;
         const { course_title, course_description, price } = req.body;
 
+        console.log(req.files)
+
         let subVideos = [];
         let subDescs = [];
         

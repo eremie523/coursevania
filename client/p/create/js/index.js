@@ -293,7 +293,7 @@ class Create {
             input.id = name.trim();
             input.classList.value = "form-control rounded-0"
             input.setAttribute("required", true);
-            input.name = input.id.replace("-", "_");
+            input.name = input.id.replaceAll("-", "_");
             if (type) {
                 input.type = type
             } else {

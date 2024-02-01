@@ -1,4 +1,4 @@
-<nav class="bg-transparent navbar navbar-expand-md py-4 position-fixed w-100 top-0 text-white" style="backdrop-filter: blur(10px)">
+<nav class="navbar navbar-expand-md py-4 position-fixed w-100 top-0 text-white" style="backdrop-filter: blur(10px); background: linear-gradient(180deg, #000, #d0d0d000);">
   <div class="container-fluid justify-content-between ">
     <a class="navbar-brand" href="#">
         <img src="../../../assets/Screenshot 2024-01-19 210638.png" alt="logo">
