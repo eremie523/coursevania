@@ -106,3 +106,15 @@ async function fetchAllCourses() {
         });
     }
 }
+
+async function fetchUser() {
+    let resp = await fetch('http://localhost:4000/fetchUser', {
+        method: "GET",
+        credentials: "include"
+    })
+
+    if(resp.status === 200) {
+        let resp1 = await resp.json()
+        return resp1;  
+    }
+}

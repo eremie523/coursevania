@@ -36,7 +36,7 @@ class Login {
     }
 
     static tab() {
-        return document.querySelector("meta[name=c-p]").getAttribute('content')
+        return location.href.split("?p=")[1]
     }
 
     static load() {

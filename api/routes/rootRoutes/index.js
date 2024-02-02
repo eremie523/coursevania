@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { uploadCourse, fetchCourse } = require("../../controllers/userControllers");
+const { uploadCourse, fetchCourse, authUser } = require("../../controllers/userControllers");
 const multer = require("multer");
 
 const rootRouter = Router()
@@ -21,7 +21,7 @@ rootRouter.get('/', function (req, res) {
 
 rootRouter.get('/courses', fetchCourse)
 
-rootRouter.post("/uploadCourses", upload.fields([{
+rootRouter.post("/uploadCourses", authUser, upload.fields([{
   name: 'course_banner',
   maxCount: 1,
 }, {

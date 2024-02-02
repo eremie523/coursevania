@@ -7,6 +7,18 @@ function login (req, res) {
   res.status(200).json(JSON.stringify({message: "User Logged In Success", status: "success/200", user: req.user}));
 };
 
+async function authUser(req, res, next) {
+    try {
+        if(req.user){
+            next();
+        }else{
+            throw new Error("Unauthorized User");
+        }
+    } catch (error) {
+        res.status(404).json(JSON.stringify({message: error, status : 404}));
+    }
+}
+
 async function signUp(req, res) {
     try {
         const {
@@ -110,7 +122,8 @@ module.exports = {
     login,
     signUp,
     uploadCourse,
-    fetchCourse
+    fetchCourse,
+    authUser
 }
 
 // function parseUserAgent(userAgent) {
